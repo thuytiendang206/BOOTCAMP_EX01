@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thuỷ Tiên</title>
+	<meta charset='UTF-8'>
+	<link rel="stylesheet" type="text/css" href="css/resetcss.css">
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="form" style="width:50%">
+			<form id="signupForm">
+				<legend>Form</legend>
+				<div class="contain">
+					<div class="row">
+						<div class="col-md-4">First Name</div>
+						<div class="col-md-8"><input class="form-control"name="fname" id="fname" placeholder=""></div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Last Name</div>
+						<div class="col-md-8"><input class="form-control" name="lname" id="lname" placeholder=""></div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Sex</div>
+						<div class="col-md-8">
+							<label class="radio-inline">
+						    	<input type="radio" name="optradio" id="male" value="Male"> Male
+						    </label>
+						    <label class="radio-inline">
+						    	<input type="radio" name="optradio" id="female" value="Female"> Female
+						    </label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Nationality</div>
+						<div class="col-md-8">
+						    <select class="form-control" id="nationality">
+						        <option value="American">American</option>
+						        <option value="Australia">Australia</option>
+						        <option value="Singapore">Singapore</option>
+						        <option value="VietNam">VietNam</option>
+					      	</select>
+						</div>
+					</div>
+					<br/>
+					<div class="row">
+						<div class="col-md-4">Full name</div>
+						<div id="sfullname"class="col-md-8"><span id="slname"></span> <span id="sfname"></span></div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Sex</div>
+						<div id="ssex"class="col-md-8"></div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">Nationality</div>
+						<div id="snationality"class="col-md-8"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $("#fname").change(function(){
+		        $("#sfullname #sfname").text($(this).val())
+		    });
+		    $("#lname").change(function(){
+		        $("#sfullname #slname").text($(this).val())
+		    });
+		   	$("#male").change(function(){
+		        $("#ssex").text($(this).val())
+		    }); 
+		    $("#female").change(function(){
+		        $("#ssex").text($(this).val())
+		    });
+		    $("#nationality").change(function(){
+		        $("#snationality").text($(this).val())
+		    }); 
+		});    
+	</script>
+</body>
+</html>

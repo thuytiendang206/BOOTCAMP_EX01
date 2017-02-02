@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+
+</head>
+<body>
+	<div style="width:40%">
+		<form id="signupForm">
+			<fieldset>
+				<legend>Form</legend>
+				<div >
+					<table style="width:100%">
+						<tr>
+							<td style="width:30%"><p>First Name:</p></td>
+							<td style="width:80%"><input style="width:90%" type="text" name="fname" id="fname" placeholder="First name"></td>
+						</tr>
+						<tr>
+							<td style="width:30%"><p>Last Name</p></td>
+							<td style="width:80%"><input style="width:90%" type="text" name="lname" id="lname" placeholder="Last name"></td>
+						</tr>
+						<tr>
+							<td style="width:30%"><p>Year old:</p></td>
+							<td style="width:80%"><input style="width:90%" type="text" name="old" id="old" placeholder="Year old"></td>
+						</tr>
+						<tr>
+							<td style="width:30%"><p>Start date:</p></td>
+							<td style="width:80%"><input style="width:90%" type="text" class="date" name="datepicker" id="datepicker"></td>
+						</tr>
+						<tr>
+							<td style="width:30%"><p>Phone number:</p></td>
+							<td style="width:80%"><input style="width:90%" type="text" name="phone" id="phone" placeholder="phone number"></td>
+						</tr>
+					</table>
+					<button type="submit" name="SUBMIT" style="float:right">SUBMIT</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script type="text/javascript">
+		$.validator.setDefaults( {
+			submitHandler: function () {
+				alert( "submitted!" );
+			}
+		} );
+
+		$(document).ready(function(){
+			$( ".date" ).datepicker();
+			$("#signupForm").validate({
+				rules:{
+					fname:{
+						required:true,
+						maxlength:25 
+					},
+					lname:{
+						required:true,
+						maxlength:25
+					},	
+					old:{
+						required:true,
+						number:true,
+						min:15,
+						max:150
+					},
+					phone:{
+						required:true,
+						number:true,
+						minlength:10, 
+						maxlength:10
+					}
+				},
+				messages:{
+					fname:{
+						required:"Please enter your first name",
+						maxlength:"maxlength 25 characters"	
+					},
+					lname:{
+						required:"Please enter your last name",
+						maxlength:"Maxlength 25 characters"
+					},
+					old:{
+						required:"Please enter your years old",
+						number:"Please enter the number",
+						min:"<br>Min years old is 15",
+						max:"<br>Max years old is 150"
+					},
+					phone:{
+						required:"Please enter your phone number",
+						number:"<br>Please enter a valid number",
+						minlength:"<br>Not phone number minlength=10",
+						maxlength:"<br>Not phone number maxlength=10"
+					}
+					
+				}	
+			});
+		});
+	</script>
+</body>
+</html>
