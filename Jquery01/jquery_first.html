@@ -19,44 +19,38 @@ table, th, td {
 				<th>Action</th>
 			</tr>
 			<tr>
-				<td id="id01">01</td>
-				<td id="name01">Son Vu</td>
-				<td id="group01">Tu dai ac nhan</td>
-				<td id="btn01"><button>Show</button></td>
+				<td class="id">01</td>
+				<td class="name">Son Vu</td>
+				<td class="group">Tu dai ac nhan</td>
+				<td class="btn"><button>Show</button></td>
 			</tr>
 			<tr>
-				<td id="id02">02</td>
-				<td id="name02">Nhan Hoang</td>
-				<td id="group02">Tu dai ac nhan</td>
-				<td id="btn02"><button>Show</button></td>
+				<td class="id">02</td>
+				<td class="name">Nhan Hoang</td>
+				<td class="group">Tu dai ac nhan</td>
+				<td class="btn"><button>Show</button></td>
 			</tr>
 			<tr>
-				<td id="id03">03</td>
-				<td id="name03">Anh Le</td>
-				<td id="group03">Tam Ninh Huyen Thoai</td>
-				<td id="btn03"><button>Show</button></td>
+				<td class="id">03</td>
+				<td class="name">Anh Le</td>
+				<td class="group">Tam Ninh Huyen Thoai</td>
+				<td class="btn"><button>Show</button></td>
 			</tr>
 			<tr>
-				<td id="id04">04</td>
-				<td id="name04">Phuc Pham</td>
-				<td id="group04">Tam Ninh Huyen Thoai</td>
-				<td id="btn04"><button>Show</button></td>
+				<td class="id">04</td>
+				<td class="name">Phuc Pham</td>
+				<td class="group">Tam Ninh Huyen Thoai</td>
+				<td class="btn"><button>Show</button></td>
 			</tr>
 		</table>
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("#btn01").click(function(){
-				alert("Information: \nID: " + $("#id01").text()+"\nName: "+$("#name01").text()+"\nGroup: "+ $("#group01").text());
-			});
-			$("#btn02").click(function(){
-				alert("Information: \nID: " + $("#id02").text()+"\nName: "+$("#name02").text()+"\nGroup: "+ $("#group02").text());
-			});
-			$("#btn03").click(function(){
-				alert("Information: \nID: " + $("#id03").text()+"\nName: "+$("#name03").text()+"\nGroup: "+ $("#group03").text());
-			});
-			$("#btn04").click(function(){
-				alert("Information: \nID: " + $("#id04").text()+"\nName: "+$("#name04").text()+"\nGroup: "+ $("#group04").text());
+			$(".btn").click(function(){
+				var id= $(this).closest("tr").find(".id").text();
+				var name= $(this).closest("tr").find(".name").text();
+				var group= $(this).closest("tr").find(".group").text();
+				alert("Information: \nID: " + id+"\nName: "+name+"\nGroup: "+ group);
 			});
 		});
 	</script>

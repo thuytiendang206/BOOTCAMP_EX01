@@ -7,6 +7,12 @@
 	<script type="text/javascript" src="jquery.validate.min.js"></script>
 	<script type="text/javascript" src="jquery-ui.min.js"></script>
 
+<style type="text/css">
+	.error{
+		color: red;
+		font-style: italic;
+	}
+</style>
 </head>
 <body>
 	<div style="width:40%">
@@ -29,7 +35,7 @@
 						</tr>
 						<tr>
 							<td style="width:30%"><p>Start date:</p></td>
-							<td style="width:80%"><input style="width:90%" type="text" class="date" name="datepicker" id="datepicker"></td>
+							<td style="width:80%"><input style="width:90%" type="text" class="date" name="datepicker" id="datepicker" placeholder="Date"></td>
 						</tr>
 						<tr>
 							<td style="width:30%"><p>Phone number:</p></td>
@@ -66,6 +72,9 @@
 						min:15,
 						max:150
 					},
+					datepicker:{
+						required:true
+					},
 					phone:{
 						required:true,
 						number:true,
@@ -87,6 +96,9 @@
 						number:"Please enter the number",
 						min:"<br>Min years old is 15",
 						max:"<br>Max years old is 150"
+					},
+					datepicker:{
+						required:"<br>Please enter date"
 					},
 					phone:{
 						required:"Please enter your phone number",
