@@ -6,6 +6,7 @@
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="jquery.validate.min.js"></script>
 	<script type="text/javascript" src="jquery-ui.min.js"></script>
+	<script type="text/javascript" scr="additional-methods.min.js"></script>
 
 <style type="text/css">
 	.error{
@@ -55,7 +56,8 @@
 		} );
 
 		$(document).ready(function(){
-			$( ".date" ).datepicker();
+			//$( ".date" ).datepicker();
+			$(".date").datepicker({ dateFormat: 'dd/mm/yy'}).val();
 			$("#signupForm").validate({
 				rules:{
 					fname:{
@@ -73,13 +75,15 @@
 						max:150
 					},
 					datepicker:{
-						required:true
+						required:true,
+						dateITA:true
 					},
 					phone:{
 						required:true,
 						number:true,
 						minlength:10, 
-						maxlength:10
+						maxlength:11
+						//matches:/^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/
 					}
 				},
 				messages:{
@@ -98,18 +102,32 @@
 						max:"<br>Max years old is 150"
 					},
 					datepicker:{
-						required:"<br>Please enter date"
+						required:"<br>Please enter date",
+						dateITA:"Please enter date"
 					},
 					phone:{
 						required:"Please enter your phone number",
 						number:"<br>Please enter a valid number",
-						minlength:"<br>Not phone number minlength=10",
-						maxlength:"<br>Not phone number maxlength=10"
+						minlength:"<br>Not phone number",
+						maxlength:"<br>Not phone number"
+						//matches:"Not phone number"
 					}
 					
 				}	
 			});
 		});
+		// function validatePhone(txtPhone) {
+		//     var a = document.getElementById(txtPhone).value;
+		//     var filter = /^[0-9-+]+$/;
+		//     if (filter.test(a)) {
+		//         return true;
+		//     }
+		//     else {
+		//         return false;
+		//     }
+		// };
+		// alert($(this).validatePhone(#phone));
+
 	</script>
 </body>
 </html>

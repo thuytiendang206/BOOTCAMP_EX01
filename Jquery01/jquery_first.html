@@ -44,13 +44,47 @@ table, th, td {
 			</tr>
 		</table>
 	</div>
+
+	<ul class="wrap">
+		<li class="item">
+			<span class="name">thanh</span>
+			<span class="class">26</span>
+			<a href="#" class="edit">Edit</a>
+		</li>
+		<li class="item">
+			<span class="name">b</span>
+			<span class="class">26</span>
+			<a href="#" class="edit">Edit</a>
+		</li>
+		<li class="item">
+			<span class="name">a</span>
+			<span class="class">26</span>
+			<a href="#" class="edit">Edit</a>
+		</li>
+		<li class="item">
+			<span class="name">d</span>
+			<span class="class">26</span>
+			<a href="#" class="edit">Edit</a>
+		</li>
+	</ul>
 	<script type="text/javascript">
+		// $(document).ready(function(){
+		// 	$(".btn").click(function(){
+		// 		var id= $(this).closest("tr").find(".id").text();
+		// 		var name= $(this).closest("tr").find(".name").text();
+		// 		var group= $(this).closest("tr").find(".group").text();
+		// 		alert("Information: \nID: " + id+"\nName: "+name+"\nGroup: "+ group);
+		// 	});
+		// });
 		$(document).ready(function(){
-			$(".btn").click(function(){
-				var id= $(this).closest("tr").find(".id").text();
-				var name= $(this).closest("tr").find(".name").text();
-				var group= $(this).closest("tr").find(".group").text();
-				alert("Information: \nID: " + id+"\nName: "+name+"\nGroup: "+ group);
+			$(".edit").click(function(){
+				// var name= $(this).closest("li").find(".name").text();
+				// var group= $(this).closest("li").find(".class").text();
+				// alert("Information: \nName: "+name+"\nGroup: "+ group);
+				var li = $(this).parent();
+				var name = li.find('.name').text();
+				var class1 = li.find('.class').text();
+				console.log(name + class1);
 			});
 		});
 	</script>

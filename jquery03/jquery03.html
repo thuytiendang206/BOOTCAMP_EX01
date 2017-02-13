@@ -75,10 +75,12 @@
 		        $("#ssex").text($(this).val())
 		    }); 
 		    $("#female").change(function(){
-		        $("#ssex").text($(this).val())
+		        $("#ssex").text($(this).val()) // val()
 		    });
 		    $("#nationality").change(function(){
-		        $("#snationality").text($(this).val())
+		        //$("#snationality").text($(this).val())
+		        var nation = $("option:selected").text();
+		        $("#snationality").text(nation);
 		    }); 
 		});    
 	</script>
